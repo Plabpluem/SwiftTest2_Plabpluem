@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { Layout } from "antd";
+import { Header } from "antd/es/layout/layout";
+import FormUser from "./components/form/formUser";
+import UserTable from "./components/table/userTable";
+import HeaderTranslate from "./components/header/Header";
+import {useTranslation} from "react-i18next";
 
 function App() {
+  const {t} = useTranslation()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className="mainContainer">
+      <Header>
+        <h1>
+          {t("Form")}
+        </h1>
+        <HeaderTranslate />
+      </Header>
+      <Layout>
+        <FormUser />
+        <UserTable />
+      </Layout>
+    </Layout>
   );
 }
 

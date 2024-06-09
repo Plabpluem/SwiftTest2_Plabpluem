@@ -1,0 +1,15 @@
+$primaryColor:  #ffa200 ;
+$secondColor: #6eda78 ;
+.mainContainer {
+    background-image: linear-gradient(270deg,$primaryColor,$secondColor);
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+    header,div{
+        background-color: transparent;
+    }
+    h1{
+        font-weight: 600;
+        font-size: 30px;
+    }
+}
