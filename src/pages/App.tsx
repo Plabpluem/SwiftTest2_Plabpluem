@@ -1,9 +1,9 @@
 import "./App.scss";
 import { Layout } from "antd";
 import { Header } from "antd/es/layout/layout";
-import FormUser from "./components/form/formUser";
-import UserTable from "./components/table/userTable";
-import HeaderTranslate from "./components/header/Header";
+import FormUser from "../components/form/formUser";
+import UserTable from "../components/table/userTable";
+import HeaderTranslate from "../components/header/Header";
 import {useTranslation} from "react-i18next";
 
 function App() {

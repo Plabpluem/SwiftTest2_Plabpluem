@@ -35,6 +35,7 @@ const userSlice = createSlice({
     },
     selectDeleteData(state,action){
       state.datas = state.datas.filter((user:any) => !action.payload.some((item:any) => item.key === user.key));
+      state.statusCheckAll = false
       localStorage.setItem("userData", JSON.stringify(state));
     },
     editData(state, action) {
@@ -48,8 +49,8 @@ const userSlice = createSlice({
         state.selectRowKeys = action.payload.map((user:any)=> user.key)
     },
     checkedAll(state,action){
-        state.statusAllCheck = action.payload
-        if(state.statusAllCheck){
+        state.statusCheckAll = action.payload
+        if(state.statusCheckAll){
           state.selectRowKeys = state.datas.map((user:{key:string}) => user.key)
           state.selectData = state.datas
         }else{
@@ -59,6 +60,7 @@ const userSlice = createSlice({
     },
     reset(state){
       state.editData = null
+      state.statusEdit = false
     }
   },
 });

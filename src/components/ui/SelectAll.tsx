@@ -17,7 +17,7 @@ const SelectAll:React.FC = () => {
   };
   return (
     <Flex align="center" style={{marginBottom:"1rem"}}>
-      <Checkbox onChange={onChangeSelectAll}><Trans>SelectAll</Trans></Checkbox>
+      <Checkbox checked={userInfo.statusCheckAll} onChange={onChangeSelectAll}><Trans>SelectAll</Trans></Checkbox>
       <Button onClick={onDeleteButtonUser}><Trans>Delete</Trans></Button>
     </Flex>
   );

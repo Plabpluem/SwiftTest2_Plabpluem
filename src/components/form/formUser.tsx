@@ -131,13 +131,11 @@ const FormUser: React.FC = () => {
           <Form.Item<FieldTypeForm> colon={false} label="-" name="citizenId4">
             <Input maxLength={2} style={{ textAlign: "center" }} />
           </Form.Item>
-          <Form.Item<FieldTypeForm>
-            colon={false}
-            label="-"
-            style={{ width: "100px", textAlign: "center" }}
-            name="citizenId5"
-          >
-            <Input maxLength={1} />
+          <Form.Item<FieldTypeForm> colon={false} label="-" name="citizenId5">
+            <Input
+              maxLength={1}
+              style={{ width: "100px", textAlign: "center" }}
+            />
           </Form.Item>
         </div>
         <Form.Item<FieldTypeForm>
@@ -151,7 +149,7 @@ const FormUser: React.FC = () => {
             <Radio value="Unisex">{t("Unisex")}</Radio>
           </Radio.Group>
         </Form.Item>
-        <div style={{ display: "flex", gap: "1rem" }}>
+        <div style={{ display: "flex", gap: "1rem",height:"56px" }}>
           <Form.Item
             name="prefix"
             label={t("Phone")}
@@ -188,8 +186,13 @@ const FormUser: React.FC = () => {
               </Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item name="phone" label="-" colon={false}>
-            <Input style={{ width: "400px" }} />
+          <Form.Item label="-" colon={false}>
+            <Form.Item
+              rules={[{ required: true }]}
+              name="phone"
+            >
+              <Input style={{ width: "400px" }} />
+            </Form.Item>
           </Form.Item>
         </div>
         <Form.Item
